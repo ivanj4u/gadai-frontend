@@ -1,10 +1,10 @@
 {
   "/oauth/**": {
-    "target": "https://gd-server.herokuapp.com/",
-    "secure": true
+    "target": "http://localhost:10000",
+    "secure": false
   },
-  "/api/**": {
-    "target": "https://gd-backend.herokuapp.com/",
-    "secure": true
+  "/api/**" : {
+    "target": "http://localhost:8080",
+    "secure": false
   }
 }
