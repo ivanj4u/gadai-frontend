@@ -1,0 +1,26 @@
+<div class="navbar navbar-fixed-top alt" data-spy="affix" data-offset-top="1000">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse .navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#">Home</a></li>
+                <li *ngIf="auth.isLogin()"><a routerLink="/gadai/simulasi">Simulasi</a></li>
+                <li *ngIf="auth.isLogin()" class="visible-xs-block"><a href="#">{{auth.getUserInfo().fullname}}</a></li>
+                <li *ngIf="auth.isLogin()" class="visible-xs-block"><a href="#" (click)="logout()">Keluar</a></li>
+                <li *ngIf="!auth.isLogin()" class="visible-xs-block"><a routerLink="/login">Masuk</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right hidden-xs">
+                <li *ngIf="auth.isLogin()"><a href="#">{{auth.getUserInfo().fullname}}</a></li>
+                <li *ngIf="auth.isLogin()"><a href="#" (click)="logout()">Keluar</a></li>
+                <li *ngIf="!auth.isLogin()"><a routerLink="/login">Masuk</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
