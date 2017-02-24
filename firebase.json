@@ -3,6 +3,16 @@
     "rules": "database.rules.json"
   },
   "hosting": {
-    "public": "dist"
+    "public": "dist",
+    "rewrites": [
+      {
+        "source": "*/oauth/**",
+        "destination": "https://gd-server.herokuapp.com/oauth/**"
+      },
+      {
+        "source": "*/api/**",
+        "destination": "https://gd-backend.herokuapp.com/api/**"
+      }
+    ]
   }
 }
