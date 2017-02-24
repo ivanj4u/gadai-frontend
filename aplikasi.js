@@ -5,8 +5,8 @@ var express  = require('express');
 var app      = express();
 var httpProxy = require('http-proxy');
 var apiProxy = httpProxy.createProxyServer();
-var authServer = 'https://gd-server.herokuapp.com/',
-  backendServer = 'https://gd-backend.herokuapp.com/';
+var authServer = 'https://gd-server.herokuapp.com',
+  backendServer = 'https://gd-backend.herokuapp.com';
 
 app.all("/oauth/*", function(req, res) {
   console.log('redirecting to auth server');
